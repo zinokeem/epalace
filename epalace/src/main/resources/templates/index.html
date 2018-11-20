@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>helloWorld</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" th:href="@{css/index.css}"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script th:src="@{js/dateUtils.js}"></script>
+    <script th:src="@{js/pageManager.js}"></script>
+    <script th:src="@{js/index.js}"></script>
+</head>
+<body>
+    <div id="header">
+        <div class="logo" title="Palace of ERRORS" alt="Palace of ERRORS"></div>
+        <!-- <div class="nav">
+            <ul>
+                <li>MAIN</li>
+                <li>CONTENTS</li>
+            </ul>
+        </div> -->
+    </div>
+    <div id="mainWrap">
+        <div id="headerMask"></div>
+        <div class="container fixed">
+            고정바
+        </div>
+        <div id="mainList" class="container">
+            <div class="buttons">
+                <input class="btn blue-color" name="insert" type="button" value="추가"/>
+                <input class="btn red-color" name="refresh" type="button" value="새로고침"/>
+                <select name="pageOffset">
+                    <option value="5">5 page</option>
+                    <option value="10" selected>10 page</option>
+                    <option value="20">20 page</option>
+                </select>
+
+            </div>
+            <table id="contents">
+                <thead></thead>
+                <tbody></tbody>
+            </table>
+            <div class="pagerWrap">
+                <input class="btn" name="left" type="button" value="<"/>
+                <ul class="pageList"></ul>
+                <input class="btn" name="right" type="button" value=">"/>
+            </div>
+        </div>
+        <div id="mainInsert" class="container" style="display:none">
+            <h2>게시글 추가</h2>
+            <div class="buttons">
+                <input class="btn" name="back" type="button" value="목록"/>
+            </div>
+            <div id="editor">
+                제목 <input name="subject" type="text" placeholder="SUBJECT" /><br>
+                작성자 <input name="usersname" type="text" placeholder="AUTH" value="znkim" disabled/><br>
+                <textarea name="content"></textarea>
+            </div>
+            <div class="buttons">
+                <input class="btn blue-color" name="insert" type="button" value="저장"/>
+            </div>
+        </div>
+        <div id="mainView" class="container" style="display:none">
+            <h2>게시글 보기</h2>
+            <div class="buttons">
+                <input class="btn" name="back" type="button" value="목록"/>
+                <input class="btn red-color" name="delete" type="button" value="삭제"/>
+            </div>
+            <div id="content">
+                제목 <input name="subject" type="text" placeholder="SUBJECT" disabled/><br>
+                작성자 <input name="usersname" type="text" placeholder="AUTH" disabled/><br>
+                작성일 <input name="created" type="text" placeholder="CREATED DATE" disabled/><br>
+                <textarea name="content" disabled></textarea>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
